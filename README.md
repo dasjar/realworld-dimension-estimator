@@ -19,42 +19,175 @@ It consists of two main parts:
 ## 🧮 Camera Calibration
 Camera calibration was performed using a checkerboard pattern captured with the **Google Pixel 8 Pro** (same phone used for test images).
 
-Intrinsic matrix \(K\):
-\[
-K=
+**Intrinsic matrix K:**
+
+```math
+K =
 \begin{bmatrix}
-3028.73 & 0 & 1543.61\\
-0 & 3024.73 & 1983.68\\
+3028.73 & 0 & 1543.61 \\
+0 & 3024.73 & 1983.68 \\
 0 & 0 & 1
 \end{bmatrix}
-\]
-
 Distortion coefficients:
-\[
-[\,k_1,k_2,p_1,p_2,k_3\,] =
-[\,0.2388,\,-1.7145,\,-7.15\times10^{-5},\,-9.26\times10^{-4},\,3.0637\,]
-\]
 
----
+[
+𝑘
+1
+,
+𝑘
+2
+,
+𝑝
+1
+,
+𝑝
+2
+,
+𝑘
+3
+]
+=
+[
+0.2388
+,
+−
+1.7145
+,
+−
+7.15
+×
+10
+−
+5
+,
+−
+9.26
+×
+10
+−
+4
+,
+3.0637
+]
+[k 
+1
+​
+ ,k 
+2
+​
+ ,p 
+1
+​
+ ,p 
+2
+​
+ ,k 
+3
+​
+ ]=[0.2388,−1.7145,−7.15×10 
+−5
+ ,−9.26×10 
+−4
+ ,3.0637]
+📏 Perspective-Projection Model
+Using the calibrated intrinsics:
 
-## 📏 Perspective-Projection Model
-Using the calibrated intrinsics  
-\(f_x=3028.73,\ f_y=3024.73,\ f=\frac{f_x+f_y}{2}=3026.73\),  
-the real-world length \(L\) is computed from the pixel distance \(d_{px}\) by:
+𝑓
+𝑥
+=
+3028.73
+,
+𝑓
+𝑦
+=
+3024.73
+,
+𝑓
+=
+𝑓
+𝑥
++
+𝑓
+𝑦
+2
+=
+3026.73
+f 
+x
+​
+ =3028.73,f 
+y
+​
+ =3024.73,f= 
+2
+f 
+x
+​
+ +f 
+y
+​
+ 
+​
+ =3026.73
+The real-world length L is computed from the pixel distance dₚₓ by:
 
-\[
-L = \frac{d_{px}Z}{f}.
-\]
+𝐿
+=
+𝑑
+𝑝
+𝑥
+⋅
+𝑍
+𝑓
+L= 
+f
+d 
+px
+​
+ ⋅Z
+​
+ 
+Example Experiment
 
-**Example Experiment**
+𝑍
+=
+0.6858
+ m
+,
+𝑑
+𝑝
+𝑥
+=
+1580.53
+ px
+Z=0.6858 m,d 
+px
+​
+ =1580.53 px
+Then:
 
-Using \(Z=0.6858\,\text{m}\) and \(d_{px}=1580.53\,\text{px}\):  
-\[
-L = \frac{1580.53\times0.6858}{3026.73} = 0.3581\,\text{m} = 358.1\,\text{mm}.
-\]
+𝐿
+=
+1580.53
+×
+0.6858
+3026.73
+=
+0.3581
+ m
+=
+358.1
+ mm
+L= 
+3026.73
+1580.53×0.6858
+​
+ =0.3581 m=358.1 mm
+The actual laptop width (measured with a ruler) was 345 mm.
+The relative error (3.8%) is within the expected range, validating both the projection model and calibration accuracy.
 
-The actual laptop width (measured with a ruler) was **345 mm**.  
-The relative error (**3.8 %**) is within the expected range, validating both the projection model and calibration accuracy.
+yaml
+Copy code
 
 ---
 
