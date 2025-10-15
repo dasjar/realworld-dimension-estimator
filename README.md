@@ -31,14 +31,13 @@ Distortion coefficients:
 
 ---
 
-## 📏 Perspective-Projection Model
-Using the calibrated intrinsics  
-$$ f_x = 3028.73, \quad f_y = 3024.73, \quad f = \frac{f_x + f_y}{2} = 3026.73 $$  
-the real-world length \( L \) is computed from the pixel distance \( d_{px} \) by:
+##  Perspective-Projection Model
+Using the calibrated intrinsics:
 
-$$
-L = \frac{d_{px} Z}{f}.
-$$
+![intrinsics](https://latex.codecogs.com/png.image?\dpi{110}&space;f_x=3028.73,\quad%20f_y=3024.73,\quad%20f=\frac{f_x+f_y}{2}=3026.73)
+
+The real-world length ![L equation](https://latex.codecogs.com/png.image?\dpi{110}&space;L%20=%20\frac{d_{px}\cdot%20Z}{f})
+is computed from the pixel distance ![dpx](https://latex.codecogs.com/png.image?\dpi{110}&space;d_{px}) and known distance ![Z](https://latex.codecogs.com/png.image?\dpi{110}&space;Z).
 
 **Example Experiment**
 
