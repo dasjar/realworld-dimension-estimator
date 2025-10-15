@@ -16,18 +16,15 @@ It consists of two main parts:
 
 ---
 
-##  Camera Calibration
+## 📷 Camera Calibration
+
 Camera calibration was performed using a checkerboard pattern captured with a mobile phone (same phone used for test images).
 
 Intrinsic matrix \( K \):
-$$
-K =
-\begin{bmatrix}
-3028.73 & 0 & 1543.61 \\
-0 & 3024.73 & 1983.68 \\
-0 & 0 & 1
-\end{bmatrix}
-$$
+
+Intrinsic matrix \( K \):
+
+![K matrix](https://latex.codecogs.com/png.image?\dpi{110}&space;K%20=%20\begin{bmatrix}3028.73%20&%200%20&%201543.61\\0%20&%203024.73%20&%201983.68\\0%20&%200%20&%201\end{bmatrix})
 
 Distortion coefficients:
 $$
