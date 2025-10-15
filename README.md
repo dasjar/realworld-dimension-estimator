@@ -146,22 +146,3 @@ GitHub Repo: https://github.com/dasjar/realworld-dimension-estimator
 (Optional) Live Web App: https://dasjar.github.io/realworld-dimension-estimator/app/
 
 🎥 Demo Video
-Attach your screen-recording showing:
-
-Running measure_dimension.py and printing result.
-
-Opening the web app, entering Z, clicking points, and seeing computed mm length.
-
-Paste your video link here after upload (Google Drive or Google Classroom).
-
-📚 References
-Course: CSc 8830 — Computer Vision
-
-Instructor’s Assignment 1 Prompt
-
-OpenCV Documentation — Camera Calibration and 3D Reconstruction
-
-R. Hartley & A. Zisserman, Multiple View Geometry in Computer Vision
-
-yaml
-Copy code
