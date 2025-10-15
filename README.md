@@ -41,13 +41,13 @@ is computed from the pixel distance ![dpx](https://latex.codecogs.com/png.image?
 
 **Example Experiment**
 
-Using \( Z = 0.6858 \, \text{m} \) and \( d_{px} = 1580.53 \, \text{px} \):  
-$$
-L = \frac{1580.53 \times 0.6858}{3026.73} = 0.3581 \, \text{m} = 358.1 \, \text{mm}.
-$$
+Using:
 
-The actual laptop width (measured with a ruler) was **345 mm**.  
-The relative error (**3.8%**) is within the expected range, validating both the projection model and calibration accuracy.
+![Z and d_px](https://latex.codecogs.com/png.image?\dpi{110}&space;Z%20=%200.6858\,\text{m},\quad%20d_{px}%20=%201580.53\,\text{px})
+
+Then:
+
+![L equation](https://latex.codecogs.com/png.image?\dpi{110}&space;L%20=%20\frac{1580.53%20\times%200.6858}{3026.73}%20=%200.3581\,\text{m}%20=%20358.1\,\text{mm})
 
 ---
 
