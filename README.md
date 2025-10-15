@@ -68,78 +68,82 @@ REALWORLD-DIMENSION-ESTIMATOR/
 ├── save_calib.py            # Save intrinsics to JSON/NPZ
 ├── requirements.txt
 └── README.md
-🐍 Problem 1 — Run the Python Script
-Requires Python 3, NumPy, OpenCV (pip install -r requirements.txt)
+## 🧩 Problem 1 — Run the Python Script
 
-Headless example (no GUI, coordinates provided):
+**Requirements:**  
+- Python 3  
+- NumPy  
+- OpenCV  
 
-bash
-Copy code
-python measure_dimension.py \
-  --image data/test_images/object.jpg \
-  --distance_m 0.6858 \
-  --points 707,1683,2287,1724 \
-  --out output/object_measured.jpg
-Expected output
-text
-Copy code
+Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+**Headless example (no GUI, coordinates provided):**
+```bash
+python measure_dimension.py   --image data/test_images/object.jpg   --distance_m 0.6858   --points 707,1683,2287,1724   --out output/object_measured.jpg
+```
+
+**Expected Output:**
+```
 [✓] fx=3028.73, fy=3024.73, f=3026.73
 [✓] Pixel distance=1580.53px  →  Real length≈358.12 mm
 [i] Saved annotated image → output/object_measured.jpg
-Notes:
+```
 
-Use the same phone camera and zoom (1×) used for calibration.
+**Notes:**
+- Use the **same phone camera and zoom (1×)** used for calibration.
+- \( Z \) is the distance from the phone’s camera lens to the object plane (measured manually with a ruler or tape; ±1 cm accuracy).
 
-𝑍
-Z is the distance from the phone’s camera lens to the object plane (measured manually with a ruler or tape; ±1 cm accuracy).
+---
 
-🌐 Problem 2 — Web Application
-This part is implemented as a pure HTML + JavaScript app, which runs on any OS and browser (desktop or mobile).
+## 🌐 Problem 2 — Web Application
 
-To run locally:
+This part is implemented as a **pure HTML + JavaScript** app, runnable on any OS or browser (desktop or mobile).
 
-bash
-Copy code
+**Run locally:**
+```bash
 python -m http.server 8080
-Then open:
-👉 http://localhost:8080/app/index.html
+```
 
-How to use:
-Upload an image (or click “Start Camera”).
+Then open:  
+👉 [http://localhost:8080/app/index.html](http://localhost:8080/app/index.html)
 
-Enter the measured distance 
-𝑍
-Z (m).
+### How to use
+1. Upload an image (or click **“Start Camera”**).  
+2. Enter the measured distance \( Z \) (in meters).  
+3. Click two points on the object.  
+4. The result (in **mm**) appears immediately.  
+5. Click **“Save PNG”** to export the annotated image.  
 
-Click two points on the object.
+> *(Optionally, publish on GitHub Pages for HTTPS webcam access.)*
 
-The result (in mm) appears immediately.
+---
 
-Click “Save PNG” to export the annotated image.
+## ⚙️ Assumptions & Limitations
 
-(Optionally publish on GitHub Pages for HTTPS webcam access.)
+- Intrinsic parameters fixed (same phone, same 1× zoom).  
+- Object approximately planar and at distance \( Z \).  
+- Undistortion handled in Python; web app assumes small FOV.  
+- Main error sources:
+  - Z-measurement accuracy
+  - Click precision
+  - Small camera tilt
 
-🧠 Assumptions & Limitations
-Intrinsic parameters fixed (same phone, same 1× zoom).
+---
 
-Object approximately planar and at distance 
-𝑍
-Z.
+## 🧾 Validation Table
 
-Undistortion handled in Python; web app assumes small FOV.
+| \(Z\) (m) | Object         | True (mm) | Measured (mm) | Abs Error (mm) | % Error |
+|:----------:|:---------------|:----------:|:--------------:|:---------------:|:--------:|
+| 0.6858     | Laptop width   | 345        | 358.1          | 13.1            | 3.8%     |
 
-Main error sources: Z-measurement, click precision, small tilt.
+---
 
-🧾 Validation Table
-𝑍
-Z (m)	Object	True (mm)	Measured (mm)	Abs Error (mm)	% Error
-0.6858	Laptop width	345	358.1	13.1	3.8%
+## 🔗 Links
 
-🔗 Links
-GitHub Repo: https://github.com/dasjar/realworld-dimension-estimator
+- **GitHub Repo:** [https://github.com/dasjar/realworld-dimension-estimator](https://github.com/dasjar/realworld-dimension-estimator)  
+- **(Optional) Live Web App:** [https://dasjar.github.io/realworld-dimension-estimator/app/](https://dasjar.github.io/realworld-dimension-estimator/app/)
 
-(Optional) Live Web App: https://dasjar.github.io/realworld-dimension-estimator/app/
 
-🎥 Demo Video
-vbnet
-Copy code
