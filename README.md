@@ -20,17 +20,14 @@ It consists of two main parts:
 
 Camera calibration was performed using a checkerboard pattern captured with a mobile phone (same phone used for test images).
 
-Intrinsic matrix \( K \):
 
 Intrinsic matrix \( K \):
 
 ![K matrix](https://latex.codecogs.com/png.image?\dpi{110}&space;K%20=%20\begin{bmatrix}3028.73%20&%200%20&%201543.61\\0%20&%203024.73%20&%201983.68\\0%20&%200%20&%201\end{bmatrix})
 
 Distortion coefficients:
-$$
-[k_1, k_2, p_1, p_2, k_3] =
-[0.2388, -1.7145, -7.15 \times 10^{-5}, -9.26 \times 10^{-4}, 3.0637]
-$$
+
+![Distortion Coefficients](https://latex.codecogs.com/png.image?\dpi{110}&space;\left[k_1,%20k_2,%20p_1,%20p_2,%20k_3\right]%20=%20\left[0.2388,%20-1.7145,%20-7.15%20\times%2010^{-5},%20-9.26%20\times%2010^{-4},%203.0637\right])
 
 ---
 
