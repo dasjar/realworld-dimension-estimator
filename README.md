@@ -1,9 +1,9 @@
-# 🧠 Real-World Dimension Estimator  
+#  Real-World Dimension Estimator  
 **CSc 8830 — Computer Vision — Assignment 1**
 
 ---
 
-## 📋 Overview
+##  Overview
 This project estimates **real-world object dimensions** from a single image using the **pinhole (perspective) projection model** and a **calibrated camera**.
 
 It consists of two main parts:
@@ -16,8 +16,8 @@ It consists of two main parts:
 
 ---
 
-## 🧮 Camera Calibration
-Camera calibration was performed using a checkerboard pattern captured with the **Google Pixel 8 Pro** (same phone used for test images).
+##  Camera Calibration
+Camera calibration was performed using a checkerboard pattern captured with a mobile phone (same phone used for test images).
 
 Intrinsic matrix \( K \):
 $$
