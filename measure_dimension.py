@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 import argparse, os, sys
 
-# --- your fixed calibration ---
+# --- your fixed calibration (from prior work) ---
 K = np.array([[3.02872766e+03, 0.00000000e+00, 1.54361101e+03],
               [0.00000000e+00, 3.02473159e+03, 1.98367915e+03],
               [0.00000000e+00, 0.00000000e+00, 1.00000000e+00]])
@@ -32,12 +32,11 @@ def main():
     if img0 is None:
         sys.exit(f"[!] Cannot read image: {args.image}")
 
-    # undistort
+    # undistort using your calibration
     h, w = img0.shape[:2]
     newK, _ = cv.getOptimalNewCameraMatrix(K, dist, (w,h), 1, (w,h))
     img = cv.undistort(img0, K, dist, None, newK)
 
-    # interactive mode
     if args.points is None:
         cv.namedWindow("Measure", cv.WINDOW_NORMAL)
         cv.setMouseCallback("Measure", click_event)
@@ -54,7 +53,6 @@ def main():
         if len(points) != 2: sys.exit("[!] Need exactly two points.")
         p1, p2 = points
     else:
-        # headless mode (useful over SSH)
         try:
             x1,y1,x2,y2 = map(float, args.points.split(','))
             p1,p2 = (x1,y1),(x2,y2)
