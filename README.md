@@ -148,4 +148,4 @@ Then open:
 ## 🔗 Links
 
 - **GitHub Repo:** [https://github.com/dasjar/realworld-dimension-estimator](https://github.com/dasjar/realworld-dimension-estimator)  
-- **(Optional) Live Web App:** [https://dasjar.github.io/realworld-dimension-estimator/app/](https://dasjar.github.io/realworld-dimension-estimator/app/)
+- **(Optional) Live Web App:** [https://dasjar.github.io/realworld-dimension-estimator/app/](https://dasjar.github.io/realworld-dimension-estimator/)
